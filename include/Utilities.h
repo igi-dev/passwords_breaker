@@ -8,7 +8,7 @@
 #include <stdbool.h>
 #include <signal.h>
 
-#define PASSWORDS 12
+#define PASSWORDS 4
 #define NUM_THREADS 6
 
 

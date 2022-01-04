@@ -35,7 +35,7 @@ void *produce1(void *arg)
                     char *md5 = (char *)malloc(33 * sizeof(char));
                     str2md5(to_check, strlen(to_check), md5);
                     found = check_password_match(passwords, md5);
-                    if (found >= 0)
+                    if (found >= 0 && broken[found] == false)
                     {
                         pthread_mutex_lock(broken_mutex);
                         broken[found] = true;
@@ -56,7 +56,7 @@ void *produce1(void *arg)
                     char *md5 = (char *)malloc(33 * sizeof(char));
                     str2md5(to_check, strlen(to_check), md5);
                     found = check_password_match(passwords, md5);
-                    if (found >= 0)
+                    if (found >= 0 && broken[found] == false)
                     {
                         pthread_mutex_lock(broken_mutex);
                         broken[found] = true;
@@ -77,7 +77,7 @@ void *produce1(void *arg)
                     char *md5 = (char *)malloc(33 * sizeof(char));
                     str2md5(to_check, strlen(to_check), md5);
                     found = check_password_match(passwords, md5);
-                    if (found >= 0)
+                    if (found >= 0 && broken[found] == false)
                     {
                         pthread_mutex_lock(broken_mutex);
                         broken[found] = true;
@@ -139,7 +139,7 @@ void *produce2(void *arg)
                     char *md5 = (char *)malloc(33 * sizeof(char));
                     str2md5(to_check, strlen(to_check), md5);
                     found = check_password_match(passwords, md5);
-                    if (found >= 0)
+                    if (found >= 0 && broken[found] == false)
                     {
                         pthread_mutex_lock(broken_mutex);
                         broken[found] = true;
@@ -163,7 +163,7 @@ void *produce2(void *arg)
                     char *md5 = (char *)malloc(33 * sizeof(char));
                     str2md5(to_check, strlen(to_check), md5);
                     found = check_password_match(passwords, md5);
-                    if (found >= 0)
+                    if (found >= 0 && broken[found] == false)
                     {
                         pthread_mutex_lock(broken_mutex);
                         broken[found] = true;
@@ -188,7 +188,7 @@ void *produce2(void *arg)
                     char *md5 = (char *)malloc(33 * sizeof(char));
                     str2md5(to_check, strlen(to_check), md5);
                     found = check_password_match(passwords, md5);
-                    if (found >= 0)
+                    if (found >= 0 && broken[found] == false)
                     {
                         pthread_mutex_lock(broken_mutex);
                         broken[found] = true;
@@ -250,7 +250,7 @@ void *produce3(void *arg)
                     char *md5 = (char *)malloc(33 * sizeof(char));
                     str2md5(to_check, length, md5);
                     found = check_password_match(passwords, md5);
-                    if (found >= 0)
+                    if (found >= 0 && broken[found] == false)
                     {
                         pthread_mutex_lock(broken_mutex);
                         broken[found] = true;
@@ -274,7 +274,7 @@ void *produce3(void *arg)
                     char *md5 = (char *)malloc(33 * sizeof(char));
                     str2md5(to_check, strlen(to_check), md5);
                     found = check_password_match(passwords, md5);
-                    if (found >= 0)
+                    if (found >= 0 && broken[found] == false)
                     {
                         pthread_mutex_lock(broken_mutex);
                         broken[found] = true;
@@ -299,7 +299,7 @@ void *produce3(void *arg)
                     char *md5 = (char *)malloc(33 * sizeof(char));
                     str2md5(to_check, strlen(to_check), md5);
                     found = check_password_match(passwords, md5);
-                    if (found >= 0)
+                    if (found >= 0 && broken[found] == false)
                     {
                         pthread_mutex_lock(broken_mutex);
                         broken[found] = true;
@@ -361,7 +361,7 @@ void *produce_double1(void *arg)
                 char *md5 = (char *)malloc(33 * sizeof(char));
                 str2md5(to_check, length1 + length2, md5);
                 found = check_password_match(passwords, md5);
-                if (found >= 0)
+                if (found >= 0 && broken[found] == false)
                 {
                     pthread_mutex_lock(broken_mutex);
                     broken[found] = true;
@@ -373,7 +373,6 @@ void *produce_double1(void *arg)
                 }
                 free(md5);
                 free(to_check);
-                //free(tmp);
             }
         }
     }
@@ -417,7 +416,7 @@ void *produce_double2(void *arg)
                 char *md5 = (char *)malloc(33 * sizeof(char));
                 str2md5(tmp, length1 + length2, md5);
                 found = check_password_match(passwords, md5);
-                if (found >= 0)
+                if (found >= 0 && broken[found] == false)
                 {
                     pthread_mutex_lock(broken_mutex);
                     broken[found] = true;
