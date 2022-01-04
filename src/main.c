@@ -68,8 +68,6 @@ int main(int argc, char **argv)
         {
             printf("Provide new passwords filename (type 'stop' to abort)\n");
             scanf("%s", buff);
-            // char *tmp = (char *)malloc((strlen(buff) + 1) * sizeof(char));
-            // memcpy(tmp, buff, strlen(buff));
             if ((strcmp(buff, "stop") == 0))
             {
                 continue;
@@ -119,6 +117,7 @@ int main(int argc, char **argv)
         printf("Wrong option, goodbye\n");
     }
     printf("Goodbye! ;)\n");
+    free(buff);
     free_dictionary(dictionary, lines_count);
     pthread_exit(NULL);
     return EXIT_SUCCESS;
