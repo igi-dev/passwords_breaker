@@ -5,4 +5,5 @@ passwords/convert.cpp
 passwords/a.out
 passwords/test.txt
 passwords/passwords.txt
+build/
 

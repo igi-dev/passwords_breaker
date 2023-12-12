@@ -8,8 +8,8 @@
 #include <stdbool.h>
 #include <signal.h>
 
-#define PASSWORDS 12
-#define NUM_THREADS 6
+#define PASSWORDS 13
+#define NUM_THREADS 16
 
 
 typedef struct threadData

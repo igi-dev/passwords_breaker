@@ -4,8 +4,17 @@ Program was started during the "RT Operating Systems" classes at university and 
 
 ## Usage
 ### Compilation and running
-To compile the program you can use makefile located in ```src/``` directory. In order to run it just invoke ```./pass_breaker```
-
+To compile the program you can use CMake:
+```
+mkdir build
+cd build
+cmake ..
+make
+```
+and run it:
+```
+./passwords_breaker
+```
 ### Features
 #### New files with passwords
 After start program will start to break 12 passwords given in ```passwords/my_passwords.txt``` file. When its done it will ask if user wants to try with another file. If yes it will ask new filename with passwords and start breaking it.
